@@ -26,20 +26,28 @@ int main(){
         cin >> temp;
         data.push_back(temp);
     }
+    
+    int indexI = 0;
+    int sizeData = data.size();
 
-    int index; int besar;
-    for(int i=0 ; i<k ; i++){
-        besar = data[i];
-        index = i;
+    while(k > 0){
+        
+        if(indexI >= sizeData-1) break;
 
-        for(int j=data.size()-1; j>i ; j--){
-            if(data[j] > besar){
-                besar = data[j];
-                index = j;
+        if(data[indexI] == sizeData-indexI){
+            indexI++;
+            continue;
+        }
+
+        for(int j=indexI+1; j<sizeData ; j++){
+            if(data[j] == sizeData-indexI){
+                swap(data[j], data[indexI]);
+                break;
             }
         }
 
-        swap(data[i], data[index]);
+        k--;
+        indexI++;
     }
 
     for(int i=0 ; i<n ; i++){
