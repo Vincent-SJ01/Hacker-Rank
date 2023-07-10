@@ -18,6 +18,7 @@ int main(){
     data[1] = n / 10;
 
     generateBigInt(data, n-1, 4);
+    cout << endl;
     
     return 0;
 }
