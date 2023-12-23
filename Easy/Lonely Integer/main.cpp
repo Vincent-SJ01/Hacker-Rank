@@ -13,7 +13,7 @@ int lonelyList(vector<int> listValue){
         }
     }
 
-    return listValue[i-1];
+    return listValue[listValue.size()-1];
 
 }
 
